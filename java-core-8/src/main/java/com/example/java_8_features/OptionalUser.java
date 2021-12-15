@@ -12,6 +12,7 @@ public class OptionalUser {
     private OptionalAddress address;
 
     public Optional<OptionalAddress> getAddress() {
+//                یک گزینه اختیاری را برمی‌گرداند که حاوی یک مقدار غیر تهی است.
         return Optional.of(address);
     }
 

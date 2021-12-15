@@ -13,7 +13,9 @@ public class OptionalAddress {
     private String street;
 
     public Optional<String> getStreet() {
+//        اگر پارامتر تهی باشد، یک optional با یک مقدار خاص یا یک optional خالی برمی‌گرداند.
         return Optional.ofNullable(street);
+
     }
 
     public void setStreet(String street) {
