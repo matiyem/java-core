@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 
 public class StreamSumCalculator {
-
+//    Reduce، به زبان ساده، مجموعه عناصر یک Stream را به یک عنصر کاهش می دهد.
     public static Integer getSumUsingCustomizedAccumulator(List<Integer> integers) {
         return integers.stream().reduce(0, ArithmeticUtils::add);
     }

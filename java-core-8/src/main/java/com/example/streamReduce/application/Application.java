@@ -19,7 +19,7 @@ public class Application {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
         int result1 = numbers.stream().reduce(0, (a, b) -> a + b);
         System.out.println(result1);
-
+        //استریم ها دنباله ای از آبجکت ها هستند
         int result2 = numbers.stream().reduce(0, Integer::sum);
         System.out.println(result2);
 

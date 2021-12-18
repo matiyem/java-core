@@ -21,6 +21,7 @@ public class StreamApi {
         return stream.limit(20).reduce((first,second)->second).orElse(null);
     }
     public static String getLastElementUsingSkip(List<String> valueList){
+//        برای بدست آوردن آخرین عضو استریم
         long count=(long) valueList.size();
         Stream<String> stream=valueList.stream();
         return stream.skip(count -1).findFirst().orElse(null);
