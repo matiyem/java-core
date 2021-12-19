@@ -7,6 +7,7 @@ This module contains articles about the Stream API in Java.
 - [How to Get the Last Element of a Stream in Java?](https://www.baeldung.com/java-stream-last-element)
 - [“Stream has already been operated upon or closed” Exception in Java](https://www.baeldung.com/java-stream-operated-upon-or-closed-exception)
 - [Iterable to Stream in Java](https://www.baeldung.com/java-iterable-to-stream)
+- 
 - [How to Iterate Over a Stream With Indices](https://www.baeldung.com/java-stream-indices)
 - [Stream Ordering in Java](https://www.baeldung.com/java-stream-ordering)
 - [Java Stream Filter with Lambda Expression](https://www.baeldung.com/java-stream-filter-lambda)
