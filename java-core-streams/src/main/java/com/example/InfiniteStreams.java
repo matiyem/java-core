@@ -16,7 +16,9 @@ public class InfiniteStreams {
     private static final Logger LOG = LoggerFactory.getLogger(InfiniteStreams.class);
 
     public static void main(String[] args) {
+        doWhileOldWay();
 
+        doWhileStreamWay();
     }
     private static void doWhileOldWay() {
 

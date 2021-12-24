@@ -24,6 +24,7 @@ public class StreamCountUnitTest {
 
     @Test
     public void givenListOfCustomers_whenCount_thenGetListSize() {
+        //خروجی count یک عدد long است
         long count = customers
           .stream()
           .count();

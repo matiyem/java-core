@@ -25,6 +25,7 @@ public class StreamsOrderingUnitTest {
   public void givenTwoCollections_whenStreamed_thenCheckOutputDifferent(){
 
     List<String> list = Arrays.asList("B", "A", "C", "D", "F");
+    //treeSet تریتیب ورود را حفظ نمیکند
     Set<String> set = new TreeSet<>(Arrays.asList("B", "A", "C", "D", "F"));
 
     Object[] listOutput = list.stream().toArray();

@@ -110,7 +110,7 @@ public class StreamFilterUnitTest {
         Customer charles = new Customer("Charles B.", 150);
         Customer mary = new Customer("Mary T.", 1, "https://images.unsplash.com/photo-1543297057-25167dfc180e");
         List<Customer> customers = Arrays.asList(john, sarah, charles, mary);
-
+        //یک راه برای هندل کردن exception استفاده از متدهای wrapper است
         assertThatThrownBy(() -> customers
           .stream()
           .filter((ThrowingPredicate.unchecked(Customer::hasValidProfilePhoto)))
@@ -126,6 +126,8 @@ public class StreamFilterUnitTest {
         List<Customer> customers = Arrays.asList(john, sarah, charles, mary);
 
         List<Customer> customersWithValidProfilePhoto = customers
+                //برای هندل کردن در interface functional ها میتوان در داخل آن ها از try-catch استفاده کنیم.
+                //functional interface ها exception ها را هندل نمیکنند
           .stream()
           .filter(c -> {
               try {
