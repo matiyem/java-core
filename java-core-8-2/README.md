@@ -8,4 +8,4 @@ This module contains articles about Java 8 core features
 - [Java 8 Stream skip() vs limit()](https://www.baeldung.com/java-stream-skip-vs-limit)
 - [Guide to Java BiFunction Interface](https://www.baeldung.com/java-bifunction-interface)
 - [Interface With Default Methods vs Abstract Class](https://www.baeldung.com/java-interface-default-method-vs-abstract-class)
-- [[<-- Prev]](/java-core/core-java-8)
+- [[<-- Prev]](/core-java-8)
