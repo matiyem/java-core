@@ -1,0 +1,68 @@
+package com.example.toArrayComparison;
+
+import org.openjdk.jmh.annotations.*;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.TreeSet;
+import java.util.concurrent.TimeUnit;
+
+
+/*
+    Create by Atiye Mousavi 
+    Date: 1/16/2022
+    Time: 10:44 AM
+**/
+@Warmup(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)
+@Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)
+@Fork(value = 3, jvmArgsAppend = { "-XX:+UseParallelGC", "-Xms4g", "-Xmx4g" })
+@BenchmarkMode(Mode.AverageTime)
+@OutputTimeUnit(TimeUnit.NANOSECONDS)
+@State(Scope.Benchmark)
+public class ToArrayBenchmark {
+
+    @Param({ "10", "10000", "10000000" })
+    private int size;
+
+    @Param({ "array-list", "tree-set" })
+    private String type;
+
+    private Collection<String> collection;
+
+    @Setup
+    public void setup() {
+        switch (type) {
+            case "array-list":
+                collection = new ArrayList<String>();
+                break;
+            case "tree-set":
+                collection = new TreeSet<String>();
+                break;
+            default:
+                throw new UnsupportedOperationException();
+        }
+        for (int i = 0; i < size; i++) {
+            collection.add(String.valueOf(i));
+        }
+    }
+
+    @Benchmark
+    public String[] zero_sized() {
+        return collection.toArray(new String[0]);
+    }
+
+    @Benchmark
+    public String[] pre_sized() {
+        return collection.toArray(new String[collection.size()]);
+    }
+
+
+    public static void main(String[] args) {
+        try {
+            org.openjdk.jmh.Main.main(args);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
