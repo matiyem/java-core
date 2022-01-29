@@ -16,7 +16,8 @@ public class InterruptExample extends Thread{
     public static void propagateException() throws InterruptedException {
         Thread.sleep(1000);
         Thread.currentThread().interrupt();
-        if (Thread.interrupted()){
+        boolean flag=Thread.interrupted();
+        if (flag){
             throw new InterruptedException();
         }
     }

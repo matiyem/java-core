@@ -20,6 +20,7 @@ public class Receiver implements Runnable {
 //
 
         for (String reciveMessage=load.recive(); !"End".equals(reciveMessage); reciveMessage= load.recive()){
+            //در اصل بر روی آبجکت خروجی رایت میکند که در کلاس تست اصلی نوشته شده است
             System.out.println(reciveMessage);
 
             try {
